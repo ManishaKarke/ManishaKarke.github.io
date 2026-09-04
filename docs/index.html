@@ -500,32 +500,27 @@
     width: 185px;
     height: 215px;
 
-    background: #173c60;
+    position: relative;
+    z-index: 2;
 
     border-radius: 48% 48% 45% 45%;
 
-    position: relative;
-
-    z-index: 2;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     overflow: hidden;
 
+    background: #173c60;
+
     box-shadow: 0 20px 35px rgba(18, 48, 80, .15);
-        }
+}
 
 .profile-circle img {
     width: 100%;
     height: 100%;
 
+    display: block;
+
     object-fit: cover;
 
     object-position: center top;
-
-    display: block;
 }
 
         .profile-circle::after {
@@ -1847,7 +1842,7 @@
                         <div class="profile-circle">
 
                             <img
-                                src="docs/Manisha_Profile.png"
+                                src="Manisha_Profile.png"
                                 alt="Manisha Karake - Software Developer">
                         
                         </div>
