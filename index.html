@@ -1,673 +1,1682 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Manisha Karake - Software Developer | .NET Core | ASP.NET MVC | Web API | Angular | SQL Server">
+          content="Manisha Karake - Software Developer specializing in .NET Core, ASP.NET MVC, Web API, Angular and SQL Server.">
 
     <meta name="keywords"
-          content=".NET Developer, Software Developer, ASP.NET Core, MVC, Web API, Angular, C#, SQL Server">
+          content=".NET Developer, Software Developer, ASP.NET Core, ASP.NET MVC, Web API, Angular, C#, SQL Server">
 
     <meta name="author" content="Manisha Karake">
 
     <title>Manisha Karake | Software Developer</title>
 
-    <!-- Bootstrap -->
+
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
+
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Google Font -->
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+
+    <!-- =====================================================
+         CUSTOM CSS
+    ====================================================== -->
+
     <style>
 
-        /* =========================================
-           GLOBAL
-        ========================================= */
+        /* =====================================================
+           ROOT VARIABLES
+        ====================================================== */
 
         :root {
+
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
-            --dark: #0f172a;
-            --dark-2: #1e293b;
+
+            --navy: #10243e;
+            --dark: #14263d;
             --text: #475569;
-            --light: #f8fafc;
-            --border: #e2e8f0;
+            --muted: #64748b;
+
+            --light-blue: #f3f8ff;
+            --soft-blue: #eaf3ff;
+
+            --border: #e5edf5;
+
             --white: #ffffff;
+
+            --shadow:
+                0 8px 25px rgba(15, 35, 60, 0.06);
+
+            --shadow-hover:
+                0 15px 35px rgba(15, 35, 60, 0.10);
         }
+
+
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+
+        html {
             scroll-behavior: smooth;
         }
 
+
         body {
-            font-family: 'Inter', sans-serif;
+
+            font-family: "Inter", sans-serif;
+
             color: var(--text);
-            background: var(--white);
-            line-height: 1.7;
+
+            background: #ffffff;
+
+            font-size: 14px;
+
+            line-height: 1.65;
+
+            overflow-x: hidden;
         }
+
 
         a {
             text-decoration: none;
         }
 
+
         section {
-            padding: 90px 0;
+            scroll-margin-top: 80px;
         }
 
-        .section-title {
-            margin-bottom: 55px;
+
+        .container {
+            max-width: 1100px;
         }
 
-        .section-title .small-title {
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        .navbar {
+
+            height: 68px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 1px solid #eef2f7;
+
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+
+            z-index: 1000;
+        }
+
+
+        .navbar-brand {
+
+            font-size: 18px;
+
+            font-weight: 800;
+
+            color: var(--navy);
+
+            line-height: 1.2;
+        }
+
+
+        .navbar-brand small {
+
+            display: block;
+
+            color: #7b8798;
+
+            font-size: 11px;
+
+            font-weight: 400;
+
+            margin-top: 2px;
+        }
+
+
+        .navbar-nav {
+
+            gap: 5px;
+        }
+
+
+        .navbar-nav .nav-link {
+
+            color: #26384f;
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+            padding: 8px 12px !important;
+
+            transition: all .25s ease;
+        }
+
+
+        .navbar-nav .nav-link:hover {
+
             color: var(--primary);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+
+        }
+
+
+        .resume-btn {
+
+            background: var(--dark);
+
+            color: #fff !important;
+
+            border-radius: 6px;
+
+            padding: 9px 16px !important;
+
+            margin-left: 10px;
+
+            box-shadow: 0 5px 12px rgba(15, 35, 60, .15);
+        }
+
+
+        .resume-btn:hover {
+
+            background: var(--primary);
+
+            color: #fff !important;
+
+        }
+
+
+        .navbar-toggler {
+
+            border: none;
+
+            box-shadow: none !important;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            min-height: 355px;
+
+            background:
+
+                radial-gradient(
+                    circle at 75% 45%,
+                    rgba(207, 228, 255, .65),
+                    transparent 26%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #f7fbff 0%,
+                    #edf6ff 100%
+                );
+
+            padding-top: 68px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+
+            height: 350px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(37, 99, 235, .05);
+
+            right: -120px;
+
+            top: -120px;
+        }
+
+
+        .hero-content {
+
+            padding: 38px 0 30px;
+        }
+
+
+        .hero-small {
+
+            color: var(--navy);
+
             font-size: 14px;
+
+            font-weight: 600;
+
+            margin-bottom: 5px;
+
+            letter-spacing: .2px;
+        }
+
+
+        .hero h1 {
+
+            color: var(--navy);
+
+            font-size: 43px;
+
+            font-weight: 800;
+
+            letter-spacing: -1.5px;
+
+            line-height: 1.1;
+
+            margin-bottom: 3px;
+        }
+
+
+        .hero-role {
+
+            color: #334155;
+
+            font-size: 19px;
+
+            font-weight: 500;
+
             margin-bottom: 10px;
         }
 
-        .section-title h2 {
-            color: var(--dark);
-            font-size: 36px;
-            font-weight: 800;
+
+        .hero-description {
+
+            max-width: 590px;
+
+            color: #475569;
+
+            font-size: 13px;
+
+            line-height: 1.65;
+
+            margin-bottom: 14px;
         }
 
-        .section-title p {
-            max-width: 650px;
-            margin: 12px auto 0;
-            color: #64748b;
-        }
-
-
-        /* =========================================
-           NAVBAR
-        ========================================= */
-
-        .navbar {
-            background: rgba(255,255,255,0.96);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 0;
-        }
-
-        .navbar-brand {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--dark);
-        }
-
-        .navbar-brand span {
-            color: var(--primary);
-        }
-
-        .navbar-nav .nav-link {
-            color: #334155;
-            font-size: 14px;
-            font-weight: 600;
-            margin-left: 25px;
-            transition: .3s;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: var(--primary);
-        }
-
-
-        /* =========================================
-           HERO
-        ========================================= */
-
-        .hero {
-            min-height: 92vh;
-            display: flex;
-            align-items: center;
-            background:
-                linear-gradient(135deg, #f8fafc 0%, #eef4ff 100%);
-            padding-top: 120px;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(42px, 6vw, 68px);
-            font-weight: 800;
-            line-height: 1.1;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
-
-        .hero-content h1 span {
-            color: var(--primary);
-        }
-
-        .hero-content .role {
-            font-size: 23px;
-            font-weight: 600;
-            color: #334155;
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            max-width: 700px;
-            font-size: 17px;
-            color: #64748b;
-            margin-bottom: 30px;
-        }
 
         .hero-buttons {
+
             display: flex;
-            gap: 14px;
+
+            gap: 12px;
+
             flex-wrap: wrap;
+
+            margin-bottom: 14px;
         }
 
-        .btn-primary-custom {
+
+        .btn-work {
+
+            background: #0d426f;
+
+            color: white;
+
+            padding: 9px 18px;
+
+            border-radius: 5px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            border: 1px solid #0d426f;
+
+            transition: .25s;
+        }
+
+
+        .btn-work:hover {
+
             background: var(--primary);
-            color: white;
-            padding: 13px 25px;
-            border-radius: 7px;
-            font-weight: 600;
-            border: 2px solid var(--primary);
-            transition: .3s;
-        }
 
-        .btn-primary-custom:hover {
-            background: var(--primary-dark);
-            border-color: var(--primary-dark);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline-custom {
-            color: var(--dark);
-            background: white;
-            padding: 13px 25px;
-            border-radius: 7px;
-            font-weight: 600;
-            border: 2px solid var(--border);
-            transition: .3s;
-        }
-
-        .btn-outline-custom:hover {
-            color: var(--primary);
             border-color: var(--primary);
+
+            color: white;
+
             transform: translateY(-2px);
         }
 
-        .hero-card {
+
+        .btn-contact {
+
             background: white;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 35px;
-            box-shadow: 0 20px 50px rgba(15,23,42,.08);
+
+            color: #12355a;
+
+            padding: 9px 20px;
+
+            border-radius: 5px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            border: 1px solid #174b7a;
+
+            transition: .25s;
         }
 
-        .hero-card .profile-icon {
-            width: 100px;
-            height: 100px;
-            margin: auto;
-            background: #dbeafe;
-            color: var(--primary);
-            border-radius: 50%;
+
+        .btn-contact:hover {
+
+            background: #174b7a;
+
+            color: white;
+        }
+
+
+        .social-links {
+
             display: flex;
-            align-items: center;
+
+            gap: 18px;
+        }
+
+
+        .social-links a {
+
+            color: #0f3558;
+
+            font-size: 20px;
+
+            transition: .25s;
+        }
+
+
+        .social-links a:hover {
+
+            color: var(--primary);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================================
+           HERO PROFILE
+        ====================================================== */
+
+        .hero-profile-wrapper {
+
+            height: 100%;
+
+            display: flex;
+
             justify-content: center;
-            font-size: 42px;
-            font-weight: 800;
-        }
 
-        .hero-card h4 {
-            color: var(--dark);
-            font-weight: 700;
-            margin-top: 20px;
-        }
-
-        .hero-card p {
-            margin-bottom: 0;
-        }
-
-        .quick-info {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-        }
-
-        .quick-info div {
-            display: flex;
             align-items: center;
-            gap: 10px;
-            margin: 10px 0;
-            font-size: 14px;
+
+            position: relative;
         }
 
-        .quick-info i {
+
+        .profile-shape {
+
+            width: 220px;
+
+            height: 255px;
+
+            position: relative;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        .profile-bg {
+
+            position: absolute;
+
+            width: 215px;
+
+            height: 245px;
+
+            background: #cfe2ff;
+
+            border-radius:
+
+                52% 48% 45% 55% /
+
+                48% 44% 56% 52%;
+
+            transform: rotate(-6deg);
+        }
+
+
+        .profile-circle {
+    width: 185px;
+    height: 215px;
+
+    background: #173c60;
+
+    border-radius: 48% 48% 45% 45%;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    box-shadow: 0 20px 35px rgba(18, 48, 80, .15);
+        }
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    display: block;
+}
+
+        .profile-circle::after {
+
+            content: "SOFTWARE DEVELOPER";
+
+            position: absolute;
+
+            bottom: 23px;
+
+            font-size: 8px;
+
+            letter-spacing: 1px;
+
+            font-weight: 500;
+
+            color: #cbdced;
+        }
+
+
+        .build-text {
+
+            position: absolute;
+
+            right: -55px;
+
+            bottom: 40px;
+
+            color: #132e4c;
+
+            font-size: 19px;
+
+            font-weight: 500;
+
+            font-style: italic;
+
+            line-height: 1.45;
+
+            transform: rotate(-7deg);
+
+            font-family: Georgia, serif;
+        }
+
+
+        .build-text::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 50px;
+
+            height: 3px;
+
+            background: #66a8ff;
+
+            bottom: -7px;
+
+            left: 8px;
+
+            transform: rotate(-7deg);
+
+            border-radius: 5px;
+        }
+
+
+        /* =====================================================
+           SECTION COMMON
+        ====================================================== */
+
+        .section {
+
+            padding: 22px 0;
+
+            background: #fff;
+        }
+
+
+        .section-title-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 13px;
+        }
+
+
+        .section-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        .section-title i {
+
+            color: var(--navy);
+
+            font-size: 21px;
+        }
+
+
+        .section-title h2 {
+
+            color: var(--navy);
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+            margin: 0;
+
+            letter-spacing: -.4px;
+        }
+
+
+        .section-link {
+
             color: var(--primary);
+
+            font-size: 12px;
+
+            font-weight: 500;
         }
 
 
-        /* =========================================
-           ABOUT
-        ========================================= */
+        .section-link i {
 
-        .about {
-            background: white;
-        }
-
-        .about-box {
-            background: var(--light);
-            border: 1px solid var(--border);
-            padding: 35px;
-            border-radius: 12px;
-        }
-
-        .about-box h3 {
-            color: var(--dark);
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-
-        .about-box p {
-            color: #64748b;
-        }
-
-        .about-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-
-        .about-list li {
-            margin-bottom: 12px;
-        }
-
-        .about-list i {
-            color: var(--primary);
-            margin-right: 8px;
+            margin-left: 5px;
         }
 
 
-        /* =========================================
+        /* =====================================================
            SKILLS
-        ========================================= */
+        ====================================================== */
 
-        .skills {
-            background: var(--light);
+        .skills-section {
+
+            padding-top: 19px;
+
+            padding-bottom: 21px;
         }
+
 
         .skill-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 28px;
+
             height: 100%;
-            transition: .3s;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #f8fbff,
+                    #f1f6fc
+                );
+
+            border: 1px solid #edf2f7;
+
+            border-radius: 8px;
+
+            padding: 14px 15px;
+
+            transition: .25s;
         }
+
 
         .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(15,23,42,.08);
+
+            transform: translateY(-3px);
+
+            box-shadow: var(--shadow-hover);
+
+            border-color: #dce9f7;
         }
 
-        .skill-card i {
-            font-size: 28px;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
 
-        .skill-card h5 {
-            color: var(--dark);
+        .skill-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            color: var(--navy);
+
+            font-size: 13px;
+
             font-weight: 700;
-            margin-bottom: 15px;
+
+            margin-bottom: 11px;
         }
+
+
+        .skill-heading i {
+
+            color: #347fc8;
+
+            font-size: 19px;
+        }
+
 
         .skill-tags {
+
             display: flex;
+
             flex-wrap: wrap;
-            gap: 8px;
+
+            gap: 6px;
         }
+
 
         .skill-tag {
-            background: #eff6ff;
-            color: #1d4ed8;
+
+            background: #e7eff8;
+
+            color: #1d3c5c;
+
+            padding: 4px 8px;
+
             border-radius: 5px;
-            padding: 6px 10px;
-            font-size: 12px;
-            font-weight: 600;
+
+            font-size: 10px;
+
+            font-weight: 500;
+
+            border: 1px solid #dde8f3;
         }
 
 
-        /* =========================================
+        /* =====================================================
            EXPERIENCE
-        ========================================= */
+        ====================================================== */
+
+        .experience-section {
+
+            padding-top: 20px;
+
+            padding-bottom: 23px;
+        }
+
+
+        .timeline {
+
+            position: relative;
+
+            padding-left: 48px;
+        }
+
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 9px;
+
+            top: 8px;
+
+            bottom: 15px;
+
+            width: 2px;
+
+            background: #d7e8fb;
+        }
+
 
         .experience-item {
+
             position: relative;
-            padding-left: 35px;
-            padding-bottom: 45px;
-            border-left: 2px solid #dbeafe;
+
+            padding-bottom: 18px;
+
+            min-height: 55px;
         }
 
+
         .experience-item:last-child {
+
             padding-bottom: 0;
         }
 
-        .experience-item::before {
-            content: "";
+
+        .timeline-dot {
+
             position: absolute;
-            left: -8px;
-            top: 0;
-            width: 14px;
-            height: 14px;
-            background: var(--primary);
+
+            left: -45px;
+
+            top: 6px;
+
+            width: 13px;
+
+            height: 13px;
+
             border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 2px #bfdbfe;
+
+            background: #4c96d7;
+
+            border: 2px solid white;
+
+            box-shadow: 0 0 0 1px #4c96d7;
         }
 
-        .experience-item h4 {
-            color: var(--dark);
+
+        .experience-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            gap: 15px;
+        }
+
+
+        .experience-item h3 {
+
+            color: var(--navy);
+
+            font-size: 15px;
+
             font-weight: 700;
-            margin-bottom: 5px;
-        }
 
-        .experience-item .company {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .experience-item .date {
-            font-size: 13px;
-            color: #64748b;
-            margin-bottom: 18px;
-        }
-
-        .experience-item ul {
-            padding-left: 18px;
-        }
-
-        .experience-item li {
-            margin-bottom: 8px;
+            margin: 0;
         }
 
 
-        /* =========================================
+        .company {
+
+            color: #294968;
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+            margin-top: 1px;
+        }
+
+
+        .experience-date {
+
+            background: #e2effd;
+
+            color: #145b9c;
+
+            padding: 5px 13px;
+
+            border-radius: 6px;
+
+            white-space: nowrap;
+
+            font-size: 10px;
+
+            font-weight: 500;
+        }
+
+
+        .experience-item p {
+
+            color: #4d5c6e;
+
+            font-size: 11.5px;
+
+            margin-top: 2px;
+
+            margin-bottom: 0;
+
+            max-width: 850px;
+
+            line-height: 1.55;
+        }
+
+
+        /* =====================================================
            PROJECTS
-        ========================================= */
+        ====================================================== */
 
-        .projects {
-            background: var(--light);
+        .projects-section {
+
+            padding-top: 20px;
+
+            padding-bottom: 22px;
+
+            background: #fff;
         }
+
 
         .project-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            overflow: hidden;
+
             height: 100%;
-            transition: .3s;
+
+            border: 1px solid #e3eaf2;
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            background: white;
+
+            transition: all .3s ease;
+
+            box-shadow: 0 2px 7px rgba(20, 40, 60, .025);
         }
+
 
         .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(15,23,42,.1);
+
+            transform: translateY(-4px);
+
+            box-shadow: var(--shadow-hover);
         }
 
-        .project-header {
-            padding: 25px;
-            background: linear-gradient(135deg, #eff6ff, #f8fafc);
-            border-bottom: 1px solid var(--border);
-        }
 
-        .project-header h4 {
-            color: var(--dark);
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
+        .project-image {
 
-        .project-role {
-            display: inline-block;
-            background: #dbeafe;
-            color: #1d4ed8;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 5px 9px;
-            border-radius: 4px;
-        }
+            height: 93px;
 
-        .project-body {
-            padding: 25px;
-        }
+            position: relative;
 
-        .tech-stack {
             display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 20px;
+
+            justify-content: center;
+
+            align-items: center;
+
+            overflow: hidden;
         }
 
-        .tech {
-            font-size: 11px;
-            background: #f1f5f9;
-            color: #475569;
-            padding: 5px 8px;
-            border-radius: 4px;
-            font-weight: 600;
+
+        .project-image.agro {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #a7d9ff,
+                    #e8f5ff
+                );
         }
 
-        .project-body ul {
-            padding-left: 18px;
+
+        .project-image.test {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d8f4ff,
+                    #eee8ff
+                );
+        }
+
+
+        .project-image.society {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #bfe0ff,
+                    #e5f2ff
+                );
+        }
+
+
+        .project-image.hire {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e3efff,
+                    #f6faff
+                );
+        }
+
+
+        .project-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            color: #0f3558;
+
+            font-size: 42px;
+        }
+
+
+        .project-open {
+
+            position: absolute;
+
+            top: 8px;
+
+            right: 8px;
+
+            width: 25px;
+
+            height: 25px;
+
+            background: white;
+
+            color: #183653;
+
+            border-radius: 5px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            box-shadow: 0 2px 6px rgba(0,0,0,.08);
+
             font-size: 14px;
         }
 
-        .project-body li {
+
+        .project-content {
+
+            padding: 12px 14px 13px;
+        }
+
+
+        .project-title {
+
+            color: var(--navy);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            margin-bottom: 1px;
+        }
+
+
+        .project-subtitle {
+
+            color: #708094;
+
+            font-size: 10.5px;
+
+            margin-bottom: 6px;
+        }
+
+
+        .project-description {
+
+            color: #4b596b;
+
+            font-size: 10.8px;
+
+            line-height: 1.5;
+
+            min-height: 50px;
+
             margin-bottom: 8px;
         }
 
 
-        /* =========================================
-           EDUCATION
-        ========================================= */
+        .project-tags {
 
-        .education-card {
-            background: var(--light);
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 12px;
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
         }
 
-        .education-card i {
-            font-size: 35px;
+
+        .project-tag {
+
+            background: #e6f1ff;
+
+            color: #175a98;
+
+            border-radius: 5px;
+
+            padding: 4px 8px;
+
+            font-size: 9.5px;
+
+            font-weight: 500;
+        }
+
+
+        /* =====================================================
+           EDUCATION
+        ====================================================== */
+
+        .education-section {
+
+            padding-top: 20px;
+
+            padding-bottom: 23px;
+        }
+
+
+        .education-card {
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #f5f9fd,
+                    #f1f6fb
+                );
+
+            border: 1px solid #e8eef5;
+
+            border-radius: 8px;
+
+            padding: 12px 16px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            height: 100%;
+        }
+
+
+        .education-icon {
+
+            width: 49px;
+
+            height: 49px;
+
+            flex-shrink: 0;
+
+            background: #edf4fc;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            color: #163958;
+
+            font-size: 22px;
+        }
+
+
+        .education-card h3 {
+
+            color: var(--navy);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            margin-bottom: 1px;
+        }
+
+
+        .education-card p {
+
+            color: #53657a;
+
+            font-size: 10.5px;
+
+            margin: 0;
+
+            line-height: 1.5;
+        }
+
+
+        .education-year {
+
+            color: #53657a;
+
+            font-size: 10.5px;
+
+            margin-top: 1px;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ====================================================== */
+
+        .contact-section {
+
+            padding: 50px 0;
+
+            background: #f7fbff;
+        }
+
+
+        .contact-title {
+
+            color: var(--navy);
+
+            font-size: 27px;
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
+        }
+
+
+        .contact-text {
+
+            color: #637287;
+
+            max-width: 550px;
+
+            margin: 0 auto 22px;
+
+            font-size: 13px;
+        }
+
+
+        .contact-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+
+        .contact-item {
+
+            background: white;
+
+            border: 1px solid #e2eaf3;
+
+            padding: 10px 16px;
+
+            border-radius: 6px;
+
+            color: #183653;
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+            transition: .25s;
+        }
+
+
+        .contact-item:hover {
+
+            color: var(--primary);
+
+            border-color: #bfd7f2;
+
+            transform: translateY(-2px);
+        }
+
+
+        .contact-item i {
+
+            margin-right: 6px;
+
             color: var(--primary);
         }
 
-        .education-card h4 {
-            color: var(--dark);
-            font-weight: 700;
-            margin-top: 15px;
-        }
 
-
-        /* =========================================
-           CONTACT
-        ========================================= */
-
-        .contact {
-            background: var(--dark);
-            color: white;
-        }
-
-        .contact .section-title h2 {
-            color: white;
-        }
-
-        .contact .section-title p {
-            color: #94a3b8;
-        }
-
-        .contact-card {
-            background: #1e293b;
-            border: 1px solid #334155;
-            padding: 30px;
-            border-radius: 12px;
-            height: 100%;
-        }
-
-        .contact-card i {
-            color: #60a5fa;
-            font-size: 25px;
-        }
-
-        .contact-card h5 {
-            margin-top: 15px;
-            font-weight: 700;
-        }
-
-        .contact-card a {
-            color: #cbd5e1;
-            word-break: break-word;
-        }
-
-        .contact-card a:hover {
-            color: white;
-        }
-
-
-        /* =========================================
+        /* =====================================================
            FOOTER
-        ========================================= */
+        ====================================================== */
 
         footer {
-            background: #020617;
-            color: #94a3b8;
-            text-align: center;
-            padding: 25px 0;
-            font-size: 14px;
+
+            background: #17293d;
+
+            color: white;
+
+            padding: 19px 0;
         }
 
 
-        /* =========================================
+        .footer-content {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+
+        .footer-copy {
+
+            font-size: 11px;
+
+            color: #e5edf5;
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 28px;
+        }
+
+
+        .footer-links a {
+
+            color: #e5edf5;
+
+            font-size: 11px;
+
+            transition: .2s;
+        }
+
+
+        .footer-links a:hover {
+
+            color: #70b2ff;
+        }
+
+
+        /* =====================================================
            BACK TO TOP
-        ========================================= */
+        ====================================================== */
 
         #backToTop {
+
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 45px;
-            height: 45px;
+
+            right: 18px;
+
+            bottom: 18px;
+
+            width: 38px;
+
+            height: 38px;
+
             border: none;
-            border-radius: 7px;
-            background: var(--primary);
-            color: white;
+
+            border-radius: 50%;
+
+            background: white;
+
+            color: #183653;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,.18);
+
             display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
             z-index: 999;
+
+            transition: .25s;
         }
 
 
-        /* =========================================
-           RESPONSIVE
-        ========================================= */
+        #backToTop:hover {
+
+            background: var(--primary);
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
 
         @media (max-width: 991px) {
 
-            .navbar-nav .nav-link {
-                margin-left: 0;
-                padding: 10px 0;
+            .navbar {
+                height: auto;
+                min-height: 68px;
             }
+
+
+            .navbar-nav {
+
+                padding: 15px 0;
+
+                gap: 0;
+            }
+
+
+            .navbar-nav .nav-link {
+
+                padding: 9px 0 !important;
+            }
+
+
+            .resume-btn {
+
+                margin-left: 0;
+
+                display: inline-block;
+
+                width: fit-content;
+
+                margin-top: 5px;
+            }
+
 
             .hero {
-                padding-top: 120px;
-                padding-bottom: 70px;
+
+                padding-top: 90px;
+
+                min-height: auto;
             }
 
-            .hero-card {
-                margin-top: 45px;
+
+            .hero-profile-wrapper {
+
+                padding: 15px 0 35px;
             }
 
-            section {
-                padding: 70px 0;
+
+            .build-text {
+
+                right: 0;
+
+                bottom: 20px;
             }
+
         }
 
-        @media (max-width: 576px) {
 
-            .hero-content h1 {
-                font-size: 42px;
+        @media (max-width: 767px) {
+
+            .hero-content {
+
+                text-align: center;
+
+                padding-top: 30px;
             }
 
-            .hero-content .role {
+
+            .hero-description {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+
+            .hero-buttons {
+
+                justify-content: center;
+            }
+
+
+            .social-links {
+
+                justify-content: center;
+            }
+
+
+            .hero h1 {
+
+                font-size: 38px;
+            }
+
+
+            .profile-shape {
+
+                transform: scale(.9);
+            }
+
+
+            .section {
+
+                padding: 28px 0;
+            }
+
+
+            .section-title h2 {
+
                 font-size: 19px;
             }
 
-            .section-title h2 {
-                font-size: 30px;
+
+            .experience-header {
+
+                flex-direction: column;
+
+                gap: 6px;
             }
 
-            .hero-buttons a {
-                width: 100%;
+
+            .experience-date {
+
+                align-self: flex-start;
+            }
+
+
+            .footer-content {
+
+                flex-direction: column;
+
                 text-align: center;
             }
+
+
+            .footer-links {
+
+                gap: 20px;
+            }
+
+        }
+
+
+        @media (max-width: 575px) {
+
+            .container {
+
+                padding-left: 18px;
+
+                padding-right: 18px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 34px;
+            }
+
+
+            .hero-role {
+
+                font-size: 17px;
+            }
+
+
+            .section-title-row {
+
+                align-items: center;
+            }
+
+
+            .section-link {
+
+                font-size: 10px;
+            }
+
+
+            .timeline {
+
+                padding-left: 38px;
+            }
+
+
+            .timeline-dot {
+
+                left: -35px;
+            }
+
+
+            .timeline::before {
+
+                left: 4px;
+            }
+
+
+            .build-text {
+
+                display: none;
+            }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================================
+<!-- =====================================================
      NAVBAR
-========================================= -->
+====================================================== -->
 
 <nav class="navbar navbar-expand-lg fixed-top">
 
     <div class="container">
 
         <a class="navbar-brand" href="#home">
-            Manisha<span>.</span>
+
+            Manisha Karake
+
+            <small>
+                Software Developer
+            </small>
+
         </a>
+
 
         <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNav">
+            data-bs-target="#mainNavigation"
+            aria-controls="mainNavigation"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
 
-            <span class="navbar-toggler-icon"></span>
+            <i class="bi bi-list fs-4"></i>
 
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
 
-            <ul class="navbar-nav ms-auto">
+        <div
+            class="collapse navbar-collapse"
+            id="mainNavigation">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#home">
+                        Home
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#about">
+                        About
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#skills">Skills</a>
+                    <a class="nav-link" href="#skills">
+                        Skills
+                    </a>
                 </li>
 
                 <li class="nav-item">
@@ -694,6 +1703,23 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+
+                    <!-- Change resume.pdf to your actual resume file -->
+
+                    <a
+                        class="nav-link resume-btn"
+                        href="resume.pdf"
+                        download>
+
+                        <i class="bi bi-download me-1"></i>
+
+                        Download Resume
+
+                    </a>
+
+                </li>
+
             </ul>
 
         </div>
@@ -704,9 +1730,9 @@
 
 
 
-<!-- =========================================
+<!-- =====================================================
      HERO
-========================================= -->
+====================================================== -->
 
 <section id="home" class="hero">
 
@@ -714,49 +1740,90 @@
 
         <div class="row align-items-center">
 
-            <div class="col-lg-8">
+            <!-- LEFT -->
+
+            <div class="col-lg-7">
 
                 <div class="hero-content">
 
-                    <div class="mb-3">
-                        <span class="skill-tag">
-                            AVAILABLE FOR OPPORTUNITIES
-                        </span>
+                    <div class="hero-small">
+                        HI, I'M
                     </div>
 
                     <h1>
-                        Hi, I'm <span>Manisha</span>
+                        Manisha Karake
                     </h1>
 
-                    <div class="role">
-                        Software Developer | Full-Stack .NET Developer
+                    <div class="hero-role">
+                        Software Developer
                     </div>
 
-                    <p>
+                    <p class="hero-description">
+
                         Software Developer with 2+ years of experience
-                        developing and maintaining business applications
-                        using C#, ASP.NET Core, ASP.NET MVC, Web API,
-                        Angular, Entity Framework Core and SQL Server.
+                        in building scalable web applications using
+                        .NET Core, ASP.NET MVC, Web API, Angular and
+                        SQL Server. Passionate about solving real-world
+                        problems through clean code and user-friendly
+                        solutions.
+
                     </p>
+
 
                     <div class="hero-buttons">
 
-                        <a href="#projects"
-                           class="btn-primary-custom">
-                            View My Projects
+                        <a
+                            href="#projects"
+                            class="btn-work">
+
+                            View My Work
+
+                            <i class="bi bi-arrow-right ms-1"></i>
+
                         </a>
 
-                        <a href="#contact"
-                           class="btn-outline-custom">
+
+                        <a
+                            href="#contact"
+                            class="btn-contact">
+
                             Contact Me
+
                         </a>
 
-                        <!-- Replace with your actual resume filename -->
-                        <a href="resume.pdf"
-                           class="btn-outline-custom"
-                           download>
-                            <i class="bi bi-download"></i>
-                            Resume
+                    </div>
+
+
+                    <div class="social-links">
+
+                        <!-- Replace # with actual profile URLs -->
+
+                        <a
+                            href="#"
+                            target="_blank"
+                            title="LinkedIn">
+
+                            <i class="bi bi-linkedin"></i>
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            target="_blank"
+                            title="GitHub">
+
+                            <i class="bi bi-github"></i>
+
+                        </a>
+
+
+                        <a
+                            href="mailto:manishakarake11@gmail.com"
+                            title="Email">
+
+                            <i class="bi bi-envelope-fill"></i>
+
                         </a>
 
                     </div>
@@ -766,37 +1833,27 @@
             </div>
 
 
-            <div class="col-lg-4">
+            <!-- RIGHT -->
 
-                <div class="hero-card text-center">
+            <div class="col-lg-5">
 
-                    <div class="profile-icon">
-                        MK
-                    </div>
+                <div class="hero-profile-wrapper">
 
-                    <h4>
-                        Manisha Karake
-                    </h4>
+                    <div class="profile-shape">
 
-                    <p>
-                        Software Developer
-                    </p>
+                        <div class="profile-bg"></div>
 
-                    <div class="quick-info text-start">
-
-                        <div>
-                            <i class="bi bi-geo-alt-fill"></i>
-                            Pune, Maharashtra, India
+                        <div class="profile-circle">
+                            <img src="Manisha Profile.png"
+                                 alt="Manisha Karake - Software Developer">
                         </div>
 
-                        <div>
-                            <i class="bi bi-briefcase-fill"></i>
-                            2+ Years Experience
-                        </div>
+                        <div class="build-text">
 
-                        <div>
-                            <i class="bi bi-code-slash"></i>
-                            Full-Stack .NET Development
+                            Build<br>
+                            Learn<br>
+                            Grow
+
                         </div>
 
                     </div>
@@ -813,86 +1870,52 @@
 
 
 
-<!-- =========================================
+<!-- =====================================================
      ABOUT
-========================================= -->
+====================================================== -->
 
-<section id="about" class="about">
+<section id="about" class="section">
 
     <div class="container">
 
-        <div class="section-title text-center">
+        <div class="section-title-row">
 
-            <div class="small-title">
-                About Me
+            <div class="section-title">
+
+                <i class="bi bi-person-circle"></i>
+
+                <h2>
+                    About Me
+                </h2>
+
             </div>
-
-            <h2>
-                Building Practical Business Applications
-            </h2>
-
-            <p>
-                I focus on developing reliable, maintainable and
-                user-friendly business applications.
-            </p>
 
         </div>
 
 
-        <div class="row justify-content-center">
+        <div class="row">
 
-            <div class="col-lg-9">
+            <div class="col-lg-10">
 
-                <div class="about-box">
+                <p class="mb-2">
 
-                    <h3>
-                        Software Developer
-                    </h3>
+                    I am a Software Developer with 2+ years of experience
+                    developing and maintaining business applications
+                    across multiple business domains.
 
-                    <p>
-                        I am a Software Developer with 2+ years of
-                        experience working on business applications
-                        across Agro Tourism, Psychological Assessment,
-                        Society Management and Recruitment domains.
-                    </p>
+                </p>
 
-                    <p>
-                        My experience includes requirements analysis,
-                        REST API development, business logic,
-                        database operations, validation, debugging
-                        and application maintenance.
-                    </p>
 
-                    <ul class="about-list">
+                <p class="mb-0">
 
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            ASP.NET Core & Web API development
-                        </li>
+                    My experience includes requirements analysis,
+                    REST API development, business logic, database
+                    operations, validation, debugging and application
+                    maintenance. I work primarily with C#, ASP.NET Core,
+                    ASP.NET MVC, Web API, Angular, Entity Framework Core,
+                    ADO.NET and SQL Server.
 
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            ASP.NET MVC application development
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            Angular frontend development & API integration
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            SQL Server, queries & stored procedures
-                        </li>
-
-                        <li>
-                            <i class="bi bi-check-circle-fill"></i>
-                            Debugging, validation & root-cause analysis
-                        </li>
-
-                    </ul>
-
-                </div>
+                </p>
 
             </div>
 
@@ -904,934 +1927,1082 @@
 
 
 
-<!-- =========================================
+<!-- =====================================================
      SKILLS
-========================================= -->
+====================================================== -->
 
-<section id="skills" class="skills">
-
-    <div class="container">
-
-        <div class="section-title text-center">
-
-            <div class="small-title">
-                Technical Skills
-            </div>
-
-            <h2>
-                Technologies I Work With
-            </h2>
-
-            <p>
-                My primary technology stack is focused on
-                Microsoft .NET full-stack development.
-            </p>
-
-        </div>
-
-
-        <div class="row g-4">
-
-
-            <!-- Backend -->
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="skill-card">
-
-                    <i class="bi bi-server"></i>
-
-                    <h5>
-                        Backend
-                    </h5>
-
-                    <div class="skill-tags">
-
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">ASP.NET Core</span>
-                        <span class="skill-tag">ASP.NET MVC</span>
-                        <span class="skill-tag">Web API</span>
-                        <span class="skill-tag">EF Core</span>
-                        <span class="skill-tag">ADO.NET</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Database -->
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="skill-card">
-
-                    <i class="bi bi-database"></i>
-
-                    <h5>
-                        Database
-                    </h5>
-
-                    <div class="skill-tags">
-
-                        <span class="skill-tag">SQL Server</span>
-                        <span class="skill-tag">LINQ</span>
-                        <span class="skill-tag">Stored Procedures</span>
-                        <span class="skill-tag">SQL Queries</span>
-                        <span class="skill-tag">Indexing</span>
-                        <span class="skill-tag">Transactions</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Frontend -->
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="skill-card">
-
-                    <i class="bi bi-window"></i>
-
-                    <h5>
-                        Frontend
-                    </h5>
-
-                    <div class="skill-tags">
-
-                        <span class="skill-tag">Angular</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">jQuery</span>
-                        <span class="skill-tag">AJAX</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">Bootstrap</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Architecture -->
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="skill-card">
-
-                    <i class="bi bi-diagram-3"></i>
-
-                    <h5>
-                        Development
-                    </h5>
-
-                    <div class="skill-tags">
-
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">MVC</span>
-                        <span class="skill-tag">Repository Pattern</span>
-                        <span class="skill-tag">Dependency Injection</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Swagger</span>
-                        <span class="skill-tag">Agile/Scrum</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     EXPERIENCE
-========================================= -->
-
-<section id="experience">
+<section id="skills" class="section skills-section">
 
     <div class="container">
 
-        <div class="section-title text-center">
+        <div class="section-title-row">
 
-            <div class="small-title">
-                Career
-            </div>
+            <div class="section-title">
 
-            <h2>
-                Professional Experience
-            </h2>
+                <i class="bi bi-gear-fill"></i>
 
-        </div>
-
-
-        <div class="row justify-content-center">
-
-            <div class="col-lg-9">
-
-
-                <!-- Software Developer -->
-
-                <div class="experience-item">
-
-                    <h4>
-                        Software Developer
-                    </h4>
-
-                    <div class="company">
-                        S & S TECH IT Business Solution
-                    </div>
-
-                    <div class="date">
-                        Jun 2025 – Present | Kolhapur, Maharashtra
-                    </div>
-
-                    <ul>
-
-                        <li>
-                            Develop and maintain business applications
-                            using C#, ASP.NET Core, ASP.NET MVC,
-                            Web API, Angular and SQL Server.
-                        </li>
-
-                        <li>
-                            Analyze functional requirements and
-                            translate them into technical solutions.
-                        </li>
-
-                        <li>
-                            Develop and integrate RESTful APIs
-                            connecting frontend components with
-                            backend services and SQL Server.
-                        </li>
-
-                        <li>
-                            Write and optimize SQL queries and
-                            stored procedures.
-                        </li>
-
-                        <li>
-                            Implement authentication, authorization,
-                            validation, business rules and exception
-                            handling.
-                        </li>
-
-                        <li>
-                            Investigate and resolve UI, API,
-                            business-logic and database defects.
-                        </li>
-
-                        <li>
-                            Participate in requirement discussions,
-                            code reviews, testing and Agile/Scrum
-                            activities.
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <!-- Junior -->
-
-                <div class="experience-item">
-
-                    <h4>
-                        Jr. Software Developer
-                    </h4>
-
-                    <div class="company">
-                        S & S TECH IT Business Solution
-                    </div>
-
-                    <div class="date">
-                        Dec 2024 – May 2025
-                    </div>
-
-                    <ul>
-
-                        <li>
-                            Developed application features using
-                            C#, ASP.NET MVC, SQL Server,
-                            JavaScript, jQuery and AJAX.
-                        </li>
-
-                        <li>
-                            Implemented UI components, business
-                            logic, validations and database operations.
-                        </li>
-
-                        <li>
-                            Developed and modified SQL queries
-                            and stored procedures.
-                        </li>
-
-                        <li>
-                            Assisted in debugging and resolving
-                            application issues.
-                        </li>
-
-                        <li>
-                            Participated in code reviews, testing,
-                            defect fixing and maintenance.
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <!-- Trainee -->
-
-                <div class="experience-item">
-
-                    <h4>
-                        Trainee Software Programmer
-                    </h4>
-
-                    <div class="company">
-                        S & S TECH IT Business Solution
-                    </div>
-
-                    <div class="date">
-                        Jun 2024 – Nov 2024
-                    </div>
-
-                    <ul>
-
-                        <li>
-                            Assisted in developing application
-                            features using C#, SQL Server and ADO.NET.
-                        </li>
-
-                        <li>
-                            Contributed to requirement analysis,
-                            application development, debugging and
-                            functional testing.
-                        </li>
-
-                        <li>
-                            Developed and modified application
-                            screens, forms and validations.
-                        </li>
-
-                        <li>
-                            Assisted in SQL queries and stored
-                            procedures.
-                        </li>
-
-                        <li>
-                            Participated in bug fixing and
-                            troubleshooting.
-                        </li>
-
-                    </ul>
-
-                </div>
-
+                <h2>
+                    Technical Skills
+                </h2>
 
             </div>
 
-        </div>
 
-    </div>
+            <a
+                href="#contact"
+                class="section-link">
 
-</section>
+                View All Skills
 
-
-
-<!-- =========================================
-     PROJECTS
-========================================= -->
-
-<section id="projects" class="projects">
-
-    <div class="container">
-
-        <div class="section-title text-center">
-
-            <div class="small-title">
-                Portfolio
-            </div>
-
-            <h2>
-                Featured Projects
-            </h2>
-
-            <p>
-                Selected business applications and modules
-                I have worked on.
-            </p>
-
-        </div>
-
-
-        <div class="row g-4">
-
-
-            <!-- SSNatureNest -->
-
-            <div class="col-lg-6">
-
-                <div class="project-card">
-
-                    <div class="project-header">
-
-                        <h4>
-                            SSNatureNest
-                        </h4>
-
-                        <span class="project-role">
-                            TEAM LEAD
-                        </span>
-
-                    </div>
-
-                    <div class="project-body">
-
-                        <div class="tech-stack">
-
-                            <span class="tech">ASP.NET Core</span>
-                            <span class="tech">Web API</span>
-                            <span class="tech">C#</span>
-                            <span class="tech">EF Core</span>
-                            <span class="tech">Angular</span>
-                            <span class="tech">SQL Server</span>
-                            <span class="tech">JavaScript</span>
-                            <span class="tech">Bootstrap</span>
-
-                        </div>
-
-                        <ul>
-
-                            <li>
-                                Led development of the Farmhouse
-                                Registration feature.
-                            </li>
-
-                            <li>
-                                Designed a 6-stage registration workflow
-                                covering farm information, rooms,
-                                documents, amenities, media and review.
-                            </li>
-
-                            <li>
-                                Implemented subscription-based
-                                eligibility rules for farmhouse
-                                registration.
-                            </li>
-
-                            <li>
-                                Integrated Angular screens with
-                                backend APIs and database operations.
-                            </li>
-
-                            <li>
-                                Applied client-side and server-side
-                                validation.
-                            </li>
-
-                            <li>
-                                Configured Entity Framework Core
-                                relationships and resolved UI,
-                                API and database issues.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- SSTestSphere -->
-
-            <div class="col-lg-6">
-
-                <div class="project-card">
-
-                    <div class="project-header">
-
-                        <h4>
-                            SSTestSphere
-                        </h4>
-
-                        <span class="project-role">
-                            TEAM LEAD
-                        </span>
-
-                    </div>
-
-                    <div class="project-body">
-
-                        <div class="tech-stack">
-
-                            <span class="tech">ASP.NET MVC</span>
-                            <span class="tech">C#</span>
-                            <span class="tech">SQL Server</span>
-                            <span class="tech">JavaScript</span>
-                            <span class="tech">jQuery</span>
-                            <span class="tech">AJAX</span>
-
-                        </div>
-
-                        <ul>
-
-                            <li>
-                                Led the MMPI assessment module.
-                            </li>
-
-                            <li>
-                                Enabled psychologists to administer
-                                tests and process patient responses.
-                            </li>
-
-                            <li>
-                                Implemented raw-score processing
-                                and score-range mapping.
-                            </li>
-
-                            <li>
-                                Designed assessment result and
-                                report-generation workflows.
-                            </li>
-
-                            <li>
-                                Built patient assessment history
-                                and test-status tracking.
-                            </li>
-
-                            <li>
-                                Optimized SQL Server queries supporting
-                                assessment and reporting workflows.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- SocietyCare -->
-
-            <div class="col-lg-6">
-
-                <div class="project-card">
-
-                    <div class="project-header">
-
-                        <h4>
-                            SSSocietyCare
-                        </h4>
-
-                        <span class="project-role">
-                            TEAM MEMBER
-                        </span>
-
-                    </div>
-
-                    <div class="project-body">
-
-                        <div class="tech-stack">
-
-                            <span class="tech">ASP.NET MVC</span>
-                            <span class="tech">C#</span>
-                            <span class="tech">SQL Server</span>
-                            <span class="tech">JavaScript</span>
-                            <span class="tech">jQuery</span>
-                            <span class="tech">AJAX</span>
-                            <span class="tech">Bootstrap</span>
-
-                        </div>
-
-                        <ul>
-
-                            <li>
-                                Built the Chairman Dashboard.
-                            </li>
-
-                            <li>
-                                Developed parking analytics for
-                                two-wheeler and four-wheeler categories.
-                            </li>
-
-                            <li>
-                                Implemented maintenance payment
-                                tracking for Cash, UPI and Cheque.
-                            </li>
-
-                            <li>
-                                Added Top 5 maintenance defaulter
-                                identification.
-                            </li>
-
-                            <li>
-                                Developed worker and vendor
-                                management features.
-                            </li>
-
-                            <li>
-                                Implemented wing-wise and
-                                parking-type filtering.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- HireLoop -->
-
-            <div class="col-lg-6">
-
-                <div class="project-card">
-
-                    <div class="project-header">
-
-                        <h4>
-                            SSHireLoop
-                        </h4>
-
-                        <span class="project-role">
-                            TEAM MEMBER
-                        </span>
-
-                    </div>
-
-                    <div class="project-body">
-
-                        <div class="tech-stack">
-
-                            <span class="tech">C#</span>
-                            <span class="tech">WinForms</span>
-                            <span class="tech">ADO.NET</span>
-                            <span class="tech">SQL Server</span>
-
-                        </div>
-
-                        <ul>
-
-                            <li>
-                                Developed the Candidate Line-Up module.
-                            </li>
-
-                            <li>
-                                Managed recruitment from candidate
-                                application through placement.
-                            </li>
-
-                            <li>
-                                Built candidate-job application
-                                and shortlisting workflows.
-                            </li>
-
-                            <li>
-                                Implemented interview scheduling
-                                and tracking.
-                            </li>
-
-                            <li>
-                                Developed placement workflow for
-                                company, position, salary and joining
-                                information.
-                            </li>
-
-                            <li>
-                                Executed SQL operations using ADO.NET,
-                                parameterized queries and stored
-                                procedures.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Organizational Website -->
-
-            <div class="col-lg-6">
-
-                <div class="project-card">
-
-                    <div class="project-header">
-
-                        <h4>
-                            Organizational Website
-                        </h4>
-
-                        <span class="project-role">
-                            CONFIDENTIAL PROJECT
-                        </span>
-
-                    </div>
-
-                    <div class="project-body">
-
-                        <div class="tech-stack">
-
-                            <span class="tech">HTML5</span>
-                            <span class="tech">CSS3</span>
-                            <span class="tech">JavaScript</span>
-                            <span class="tech">Bootstrap</span>
-
-                        </div>
-
-                        <ul>
-
-                            <li>
-                                Designed and developed a responsive
-                                multi-section organizational website.
-                            </li>
-
-                            <li>
-                                Implemented structured navigation.
-                            </li>
-
-                            <li>
-                                Added service and course sections.
-                            </li>
-
-                            <li>
-                                Developed placement information
-                                sections.
-                            </li>
-
-                            <li>
-                                Created responsive layouts using
-                                Bootstrap.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     EDUCATION
-========================================= -->
-
-<section id="education">
-
-    <div class="container">
-
-        <div class="section-title text-center">
-
-            <div class="small-title">
-                Education
-            </div>
-
-            <h2>
-                Academic Background
-            </h2>
-
-        </div>
-
-
-        <div class="row justify-content-center">
-
-            <div class="col-md-7">
-
-                <div class="education-card text-center">
-
-                    <i class="bi bi-mortarboard-fill"></i>
-
-                    <h4>
-                        Master of Computer Applications
-                    </h4>
-
-                    <p class="mb-1">
-                        Savitribai Phule Pune University (SPPU)
-                    </p>
-
-                    <strong>
-                        2025
-                    </strong>
-
-                    <p class="mt-3 mb-0">
-                        Pune, Maharashtra
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================
-     CONTACT
-========================================= -->
-
-<section id="contact" class="contact">
-
-    <div class="container">
-
-        <div class="section-title text-center">
-
-            <div class="small-title">
-                Get In Touch
-            </div>
-
-            <h2>
-                Let's Work Together
-            </h2>
-
-            <p>
-                I'm open to discussing software development
-                opportunities and interesting projects.
-            </p>
-
-        </div>
-
-
-        <div class="row g-4 justify-content-center">
-
-
-            <!-- Email -->
-
-            <div class="col-md-4">
-
-                <div class="contact-card text-center">
-
-                    <i class="bi bi-envelope-fill"></i>
-
-                    <h5>
-                        Email
-                    </h5>
-
-                    <a href="mailto:manishakarake11@gmail.com">
-                        manishakarake11@gmail.com
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Phone -->
-
-            <div class="col-md-4">
-
-                <div class="contact-card text-center">
-
-                    <i class="bi bi-telephone-fill"></i>
-
-                    <h5>
-                        Phone
-                    </h5>
-
-                    <a href="tel:+919225308357">
-                        +91 9225308357
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Location -->
-
-            <div class="col-md-4">
-
-                <div class="contact-card text-center">
-
-                    <i class="bi bi-geo-alt-fill"></i>
-
-                    <h5>
-                        Location
-                    </h5>
-
-                    <a href="#">
-                        Pune, Maharashtra, India
-                    </a>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="text-center mt-5">
-
-            <a href="mailto:manishakarake11@gmail.com"
-               class="btn-primary-custom">
-
-                <i class="bi bi-send-fill"></i>
-                Contact Me
+                <i class="bi bi-arrow-right"></i>
 
             </a>
 
         </div>
 
+
+        <div class="row g-3">
+
+
+            <!-- BACKEND -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="skill-card">
+
+                    <div class="skill-heading">
+
+                        <i class="bi bi-server"></i>
+
+                        Backend
+
+                    </div>
+
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">C#</span>
+
+                        <span class="skill-tag">
+                            ASP.NET Core
+                        </span>
+
+                        <span class="skill-tag">
+                            ASP.NET MVC
+                        </span>
+
+                        <span class="skill-tag">
+                            Web API
+                        </span>
+
+                        <span class="skill-tag">
+                            Entity Framework Core
+                        </span>
+
+                        <span class="skill-tag">
+                            ADO.NET
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FRONTEND -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="skill-card">
+
+                    <div class="skill-heading">
+
+                        <i class="bi bi-display"></i>
+
+                        Frontend
+
+                    </div>
+
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">
+                            Angular
+                        </span>
+
+                        <span class="skill-tag">
+                            JavaScript
+                        </span>
+
+                        <span class="skill-tag">
+                            TypeScript
+                        </span>
+
+                        <span class="skill-tag">
+                            jQuery
+                        </span>
+
+                        <span class="skill-tag">
+                            AJAX
+                        </span>
+
+                        <span class="skill-tag">
+                            HTML5
+                        </span>
+
+                        <span class="skill-tag">
+                            CSS3
+                        </span>
+
+                        <span class="skill-tag">
+                            Bootstrap
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATABASE -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="skill-card">
+
+                    <div class="skill-heading">
+
+                        <i class="bi bi-database-fill"></i>
+
+                        Database
+
+                    </div>
+
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">
+                            SQL Server
+                        </span>
+
+                        <span class="skill-tag">
+                            Stored Procedures
+                        </span>
+
+                        <span class="skill-tag">
+                            SQL Queries
+                        </span>
+
+                        <span class="skill-tag">
+                            LINQ
+                        </span>
+
+                        <span class="skill-tag">
+                            Data Modeling
+                        </span>
+
+                        <span class="skill-tag">
+                            Indexing
+                        </span>
+
+                        <span class="skill-tag">
+                            Transactions
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOOLS -->
+
+            <div class="col-md-6 col-lg-3">
+
+                <div class="skill-card">
+
+                    <div class="skill-heading">
+
+                        <i class="bi bi-wrench-adjustable"></i>
+
+                        Tools & Others
+
+                    </div>
+
+
+                    <div class="skill-tags">
+
+                        <span class="skill-tag">
+                            Visual Studio
+                        </span>
+
+                        <span class="skill-tag">
+                            VS Code
+                        </span>
+
+                        <span class="skill-tag">
+                            Git
+                        </span>
+
+                        <span class="skill-tag">
+                            Swagger
+                        </span>
+
+                        <span class="skill-tag">
+                            Postman
+                        </span>
+
+                        <span class="skill-tag">
+                            Dependency Injection
+                        </span>
+
+                        <span class="skill-tag">
+                            Repository Pattern
+                        </span>
+
+                        <span class="skill-tag">
+                            Agile/Scrum
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
 </section>
 
 
 
-<!-- =========================================
+<!-- =====================================================
+     EXPERIENCE
+====================================================== -->
+
+<section id="experience" class="section experience-section">
+
+    <div class="container">
+
+        <div class="section-title-row">
+
+            <div class="section-title">
+
+                <i class="bi bi-briefcase-fill"></i>
+
+                <h2>
+                    Professional Experience
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <!-- SOFTWARE DEVELOPER -->
+
+            <div class="experience-item">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <h3>
+                            Software Developer
+                        </h3>
+
+                        <div class="company">
+                            S & S TECH IT Business Solution, Kolhapur
+                        </div>
+
+                    </div>
+
+
+                    <span class="experience-date">
+                        Jun 2025 – Present
+                    </span>
+
+                </div>
+
+
+                <p>
+
+                    Developing and maintaining business applications
+                    using .NET Core, ASP.NET MVC, Web API, Angular and
+                    SQL Server. Involved in requirements analysis, API
+                    integration, database operations, validation,
+                    debugging and application maintenance.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- JR SOFTWARE DEVELOPER -->
+
+            <div class="experience-item">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <h3>
+                            Jr. Software Developer
+                        </h3>
+
+                        <div class="company">
+                            S & S TECH IT Business Solution, Kolhapur
+                        </div>
+
+                    </div>
+
+
+                    <span class="experience-date">
+                        Dec 2024 – May 2025
+                    </span>
+
+                </div>
+
+
+                <p>
+
+                    Developed application features using ASP.NET MVC,
+                    C#, SQL Server, JavaScript and jQuery. Implemented
+                    UI components, business logic, validations and
+                    database operations.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- TRAINEE -->
+
+            <div class="experience-item">
+
+                <div class="timeline-dot"></div>
+
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <h3>
+                            Trainee Software Programmer
+                        </h3>
+
+                        <div class="company">
+                            S & S TECH IT Business Solution, Kolhapur
+                        </div>
+
+                    </div>
+
+
+                    <span class="experience-date">
+                        Jun 2024 – Nov 2024
+                    </span>
+
+                </div>
+
+
+                <p>
+
+                    Assisted in application development using C#,
+                    ADO.NET and SQL Server. Worked on database
+                    operations, application screens, functional testing,
+                    debugging and bug fixing.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS
+====================================================== -->
+
+<section id="projects" class="section projects-section">
+
+    <div class="container">
+
+        <div class="section-title-row">
+
+            <div class="section-title">
+
+                <i class="bi bi-folder-fill"></i>
+
+                <h2>
+                    Projects
+                </h2>
+
+            </div>
+
+
+            <a
+                href="#projects"
+                class="section-link">
+
+                View All Projects
+
+                <i class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+        <div class="row g-3">
+
+
+            <!-- =================================================
+                 SSNATURENEST
+            ================================================== -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-image agro">
+
+                        <div class="project-icon">
+
+                            <i class="bi bi-house-heart-fill"></i>
+
+                        </div>
+
+
+                        <div class="project-open">
+
+                            <i class="bi bi-box-arrow-up-right"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-title">
+
+                            SSNatureNest – Agro Tourism
+
+                        </div>
+
+
+                        <div class="project-subtitle">
+
+                            Farmhouse Registration & Management
+
+                        </div>
+
+
+                        <div class="project-description">
+
+                            Developed a 6-stage farmhouse registration
+                            workflow with subscription-based eligibility
+                            rules. Integrated Angular with .NET Core
+                            Web APIs and SQL Server.
+
+                        </div>
+
+
+                        <div class="project-tags">
+
+                            <span class="project-tag">
+                                .NET Core
+                            </span>
+
+                            <span class="project-tag">
+                                Angular
+                            </span>
+
+                            <span class="project-tag">
+                                SQL Server
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SSTESTSPHERE
+            ================================================== -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-image test">
+
+                        <div class="project-icon">
+
+                            <i class="bi bi-person-hearts"></i>
+
+                        </div>
+
+
+                        <div class="project-open">
+
+                            <i class="bi bi-box-arrow-up-right"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-title">
+
+                            SSTestSphere
+
+                        </div>
+
+
+                        <div class="project-subtitle">
+
+                            Psychological Assessment System
+
+                        </div>
+
+
+                        <div class="project-description">
+
+                            Led the MMPI assessment module for test
+                            administration, response processing,
+                            score mapping and structured report
+                            generation.
+
+                        </div>
+
+
+                        <div class="project-tags">
+
+                            <span class="project-tag">
+                                ASP.NET MVC
+                            </span>
+
+                            <span class="project-tag">
+                                JavaScript
+                            </span>
+
+                            <span class="project-tag">
+                                SQL Server
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SOCIETY
+            ================================================== -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-image society">
+
+                        <div class="project-icon">
+
+                            <i class="bi bi-buildings-fill"></i>
+
+                        </div>
+
+
+                        <div class="project-open">
+
+                            <i class="bi bi-box-arrow-up-right"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-title">
+
+                            SSSocietyCare
+
+                        </div>
+
+
+                        <div class="project-subtitle">
+
+                            Housing Society Management
+
+                        </div>
+
+
+                        <div class="project-description">
+
+                            Worked on Member Management, maintenance,
+                            complaints, parking and dashboard modules
+                            with dynamic filtering and database
+                            operations.
+
+                        </div>
+
+
+                        <div class="project-tags">
+
+                            <span class="project-tag">
+                                ASP.NET MVC
+                            </span>
+
+                            <span class="project-tag">
+                                jQuery
+                            </span>
+
+                            <span class="project-tag">
+                                AJAX
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 HIRELOOP
+            ================================================== -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-image hire">
+
+                        <div class="project-icon">
+
+                            <i class="bi bi-people-fill"></i>
+
+                        </div>
+
+
+                        <div class="project-open">
+
+                            <i class="bi bi-box-arrow-up-right"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-title">
+
+                            SSHireLoop
+
+                        </div>
+
+
+                        <div class="project-subtitle">
+
+                            Recruitment Management System
+
+                        </div>
+
+
+                        <div class="project-description">
+
+                            Developed candidate application,
+                            shortlisting, interview scheduling,
+                            selection and placement workflows
+                            using WinForms and ADO.NET.
+
+                        </div>
+
+
+                        <div class="project-tags">
+
+                            <span class="project-tag">
+                                C#
+                            </span>
+
+                            <span class="project-tag">
+                                WinForms
+                            </span>
+
+                            <span class="project-tag">
+                                ADO.NET
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ORGANIZATIONAL WEBSITE
+            ================================================== -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-image society">
+
+                        <div class="project-icon">
+
+                            <i class="bi bi-globe2"></i>
+
+                        </div>
+
+
+                        <div class="project-open">
+
+                            <i class="bi bi-box-arrow-up-right"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-title">
+
+                            Organizational Website
+
+                        </div>
+
+
+                        <div class="project-subtitle">
+
+                            Confidential Project
+
+                        </div>
+
+
+                        <div class="project-description">
+
+                            Designed a responsive multi-section website
+                            with structured navigation, services,
+                            courses and placement information.
+
+                        </div>
+
+
+                        <div class="project-tags">
+
+                            <span class="project-tag">
+                                HTML5
+                            </span>
+
+                            <span class="project-tag">
+                                CSS3
+                            </span>
+
+                            <span class="project-tag">
+                                JavaScript
+                            </span>
+
+                            <span class="project-tag">
+                                Bootstrap
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDUCATION
+====================================================== -->
+
+<section id="education" class="section education-section">
+
+    <div class="container">
+
+        <div class="section-title-row">
+
+            <div class="section-title">
+
+                <i class="bi bi-mortarboard-fill"></i>
+
+                <h2>
+                    Education
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="row g-3">
+
+
+            <!-- MCA -->
+
+            <div class="col-md-6">
+
+                <div class="education-card">
+
+                    <div class="education-icon">
+
+                        <i class="bi bi-mortarboard"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Master of Computer Applications (MCA)
+                        </h3>
+
+                        <p>
+                            Savitribai Phule Pune University
+                        </p>
+
+                        <div class="education-year">
+                            2023 – 2025
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BSC -->
+
+            <div class="col-md-6">
+
+                <div class="education-card">
+
+                    <div class="education-icon">
+
+                        <i class="bi bi-mortarboard"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Bachelor of Science (B.Sc)
+                        </h3>
+
+                        <p>
+                            Savitribai Phule Pune University
+                        </p>
+
+                        <div class="education-year">
+                            2020 – 2023
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+====================================================== -->
+
+<section id="contact" class="contact-section">
+
+    <div class="container text-center">
+
+        <div class="section-title">
+
+            <div class="section-title justify-content-center">
+
+                <i class="bi bi-chat-dots-fill"></i>
+
+                <h2>
+                    Let's Connect
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <h2 class="contact-title">
+
+            Interested in working together?
+
+        </h2>
+
+
+        <p class="contact-text">
+
+            I'm open to software development opportunities,
+            collaborations and discussions around .NET
+            full-stack development.
+
+        </p>
+
+
+        <div class="contact-buttons">
+
+
+            <a
+                href="mailto:manishakarake11@gmail.com"
+                class="contact-item">
+
+                <i class="bi bi-envelope-fill"></i>
+
+                manishakarake11@gmail.com
+
+            </a>
+
+
+            <a
+                href="tel:+919225308357"
+                class="contact-item">
+
+                <i class="bi bi-telephone-fill"></i>
+
+                +91 9225308357
+
+            </a>
+
+
+            <span class="contact-item">
+
+                <i class="bi bi-geo-alt-fill"></i>
+
+                Pune, Maharashtra, India
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
      FOOTER
-========================================= -->
+====================================================== -->
 
 <footer>
 
     <div class="container">
 
-        <p class="mb-1">
-            © <span id="year"></span>
-            Manisha Karake. All Rights Reserved.
-        </p>
+        <div class="footer-content">
 
-        <small>
-            Software Developer | .NET | Angular | SQL Server
-        </small>
+
+            <div class="footer-copy">
+
+                © <span id="currentYear"></span>
+                Manisha Karake. All rights reserved.
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <!-- Replace # with your actual LinkedIn URL -->
+
+                <a
+                    href="#"
+                    target="_blank">
+
+                    LinkedIn
+
+                </a>
+
+
+                <!-- Replace # with your actual GitHub URL -->
+
+                <a
+                    href="#"
+                    target="_blank">
+
+                    GitHub
+
+                </a>
+
+
+                <a
+                    href="mailto:manishakarake11@gmail.com">
+
+                    Email
+
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -1839,44 +3010,56 @@
 
 
 
-<!-- BACK TO TOP -->
+<!-- =====================================================
+     BACK TO TOP
+====================================================== -->
 
 <button id="backToTop">
+
     <i class="bi bi-arrow-up"></i>
+
 </button>
 
 
 
-<!-- Bootstrap JS -->
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
 
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 
 
+
+<!-- =====================================================
+     CUSTOM JAVASCRIPT
+====================================================== -->
+
 <script>
 
-    /* =========================================
+    /* =====================================================
        CURRENT YEAR
-    ========================================= */
+    ====================================================== */
 
-    document.getElementById("year").textContent =
+    document.getElementById("currentYear").textContent =
         new Date().getFullYear();
 
 
 
-    /* =========================================
+    /* =====================================================
        BACK TO TOP
-    ========================================= */
+    ====================================================== */
 
     const backToTop =
         document.getElementById("backToTop");
 
+
     window.addEventListener("scroll", function () {
 
-        if (window.scrollY > 400) {
+        if (window.scrollY > 350) {
 
-            backToTop.style.display = "block";
+            backToTop.style.display = "flex";
 
         } else {
 
@@ -1890,38 +3073,107 @@
     backToTop.addEventListener("click", function () {
 
         window.scrollTo({
+
             top: 0,
+
             behavior: "smooth"
+
         });
 
     });
 
 
 
-    /* =========================================
+    /* =====================================================
        CLOSE MOBILE NAVBAR AFTER CLICK
-    ========================================= */
+    ====================================================== */
 
-    document.querySelectorAll(".navbar-nav .nav-link")
-        .forEach(function (link) {
+    const navLinks =
+        document.querySelectorAll(
+            ".navbar-nav .nav-link"
+        );
 
-            link.addEventListener("click", function () {
 
-                const navbar =
-                    document.querySelector(".navbar-collapse");
+    navLinks.forEach(function (link) {
 
-                if (navbar.classList.contains("show")) {
+        link.addEventListener("click", function () {
 
-                    new bootstrap.Collapse(navbar).hide();
+            const navbar =
+                document.getElementById(
+                    "mainNavigation"
+                );
 
-                }
 
-            });
+            if (navbar.classList.contains("show")) {
+
+                const collapse =
+                    bootstrap.Collapse.getInstance(navbar)
+                    || new bootstrap.Collapse(navbar);
+
+                collapse.hide();
+
+            }
 
         });
+
+    });
+
+
+
+    /* =====================================================
+       ACTIVE NAVIGATION
+    ====================================================== */
+
+    const sections =
+        document.querySelectorAll("section[id]");
+
+    const navigationLinks =
+        document.querySelectorAll(
+            ".navbar-nav .nav-link"
+        );
+
+
+    window.addEventListener("scroll", function () {
+
+        let currentSection = "";
+
+
+        sections.forEach(function (section) {
+
+            const sectionTop =
+                section.offsetTop - 120;
+
+
+            if (window.scrollY >= sectionTop) {
+
+                currentSection =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navigationLinks.forEach(function (link) {
+
+            link.classList.remove("active");
+
+            if (
+                link.getAttribute("href") ===
+                "#" + currentSection
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    });
 
 </script>
 
 
 </body>
+
 </html>
